@@ -61,9 +61,10 @@ Example:
 
 == Installation ==
 
-1. Upload `k1-page-listing` directory to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. All ready
+1. Install the "Klan1 Common WP Functions" plugin. Search for it on `Plugins -> Ad new` WP control panel section or from http://wordpress.org/plugins/klan1-functions/.
+2. Upload `k1-page-listing` directory to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
+4. All ready
 
 == Frequently Asked Questions ==
 

@@ -3,7 +3,7 @@
   Plugin Name: Klan1 WP List Subpages
   Plugin URI: http://www.klan1.com
   Description: This one will help you to list all the subpages in a list with links, this one is intented to help WP to be used as CMS
-  Version: 0.3.1
+  Version: 0.3.3
   Author: Alejandro Trujillo J. - J0hnD03
   Author URI: http://www.facebook.com/j0hnd03
  */
@@ -28,8 +28,10 @@
  */
 
 // Requisites 
-if (!defined("K1_FUNCTIONS") && (K1_FUNCTIONS_VER >= 0.2)) {
+if (!defined("K1_FUNCTIONS") && (K1_FUNCTIONS_VER >= 0.3)) {
     return new WP_Error('Klan1 WP List Subpages', __("The plugin 'Klan1 Common WP Functions' ver > 0.3.3 is needed, please install it first."));
+} else {
+    define("K1LSP_VER", 0.3);
 }
 
 define("K1LSP_URL", plugin_dir_url(__FILE__));
@@ -47,7 +49,7 @@ if (file_exists($k1lsp_custom_css_file)) {
 } elseif (file_exists($k1lsp_css_file)) {
     wp_register_style('k1_list_page', $k1lsp_css_url);
     wp_enqueue_style('k1_list_page');
-}else{
+} else {
     return new WP_Error('Klan1 WP List Subpages', __("There is not CSS style to load."));
 }
 
