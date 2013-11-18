@@ -3,7 +3,7 @@
   Plugin Name: Klan1 WP List Subpages
   Plugin URI: http://www.klan1.com
   Description: This one will help you to list all the subpages in a list with links, this one is intented to help WP to be used as CMS
-  Version: 0.3.3
+  Version: 0.3.4
   Author: Alejandro Trujillo J. - J0hnD03
   Author URI: http://www.facebook.com/j0hnd03
  */
@@ -64,7 +64,7 @@ function k1_list_pages_func($attribs) {
         'mode' => "table",
         'orderby' => "title",
         'order' => "ASC",
-        'title' => null,
+        'title' => "",
         'depth' => 1,
         'thumbs' => 1,
         'thumbw' => 80,
@@ -94,7 +94,7 @@ function k1_list_pages_func($attribs) {
     $thumba = $attribs['thumba'];
 
 //    if ($list_title != 0) {
-    $list_title = (!empty($list_title)) ? $list_title : $post->post_title;
+//    $list_title = (!empty($list_title)) ? $list_title : $post->post_title;
 //    }
 
     echo "\n<!-- Begin Klan1 WP List Subpages -->\n<div id='k1-list-pages' style='clear:both'>\n";
