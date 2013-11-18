@@ -94,7 +94,7 @@ function k1_list_pages_func($attribs) {
     $thumba = $attribs['thumba'];
 
 //    if ($list_title != 0) {
-    $list_tile = (!empty($list_title)) ? $list_title : $post->post_title;
+    $list_title = (!empty($list_title)) ? $list_title : $post->post_title;
 //    }
 
     echo "\n<!-- Begin Klan1 WP List Subpages -->\n<div id='k1-list-pages' style='clear:both'>\n";
@@ -138,7 +138,7 @@ function k1_list_pages_func($attribs) {
             "&sort_column={$list_order_by}" .
             "&sort_order={$list_order}" .
             "&depth={$list_depth}" .
-            "&title_li='{$list_tile}'"
+            "&title_li={$list_title}"
     ;
 
     $i = 0;
