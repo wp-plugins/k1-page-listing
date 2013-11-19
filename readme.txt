@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This one will help you to list all the subpages in a list with links, this one is intented to help WP to be used as CMS.
 
 == Description ==
-**IMPORTANT**: This plugin requires **Klan1 Common WP Functions** plugin *http://wordpress.org/plugins/klan1-functions/.
+**IMPORTANT**: *This plugin requires **Klan1 Common WP Functions** plugin: http://wordpress.org/plugins/klan1-functions/*
 
 **USAGE**
 
