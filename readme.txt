@@ -22,7 +22,7 @@ This one will help you to list all the subpages in a list with links, this one i
 
 This are written as 'parameter' => default value
 
-**General**
+**Global parameters**
 
 * 'exclude' => null *Coma separated list with ID numbers*
 * 'class' => null *CSS class to assign to the table or list*
@@ -32,7 +32,11 @@ This are written as 'parameter' => default value
         
 Please read: http://codex.wordpress.org/Template_Tags/get_posts
 
-**Thumb**
+**Table mode parameters**
+
+* 'thumbs' => 1 *show or not thumbs*
+
+**Thumb related parameters**
 
 * 'thumbw' => 80 *width*
 * 'thumbh' => 50 *height*
@@ -41,11 +45,7 @@ Please read: http://codex.wordpress.org/Template_Tags/get_posts
 
 See TIMTHUMB documentation: http://www.binarymoon.co.uk/2010/08/timthumb-part-4-moving-crop-location/
 
-**Table mode**
-
-* 'thumbs' => 1 *show or not thumbs*
-
-**List mode**
+**List mode parameters**
 
 * 'depth' => 1,
 * 'title' => null,
@@ -54,7 +54,7 @@ See http://codex.wordpress.org/Function_Reference/wp_list_pages for better expla
 
 *Example:*
 
-´[k1-list-pages mode=table orderby=date order=desc exclude=3,45]´
+`[k1-list-pages mode=table orderby=date order=desc exclude=3,45]`
 
 == Installation ==
 
