@@ -3,7 +3,7 @@
   Plugin Name: Klan1 WP List Subpages
   Plugin URI: http://www.klan1.com
   Description: This one will help you to list all the subpages in a list with links, this one is intented to help WP to be used as CMS
-  Version: 0.3.5
+  Version: 0.4
   Author: Alejandro Trujillo J. - J0hnD03
   Author URI: http://www.facebook.com/j0hnd03
  */
@@ -27,12 +27,46 @@
   along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Requisites 
-if (!defined("K1_FUNCTIONS") && (K1_FUNCTIONS_VER >= 0.3)) {
-    return new WP_Error('Klan1 WP List Subpages', __("The plugin 'Klan1 Common WP Functions' ver > 0.3.3 is needed, please install it first."));
-} else {
-    define("K1LSP_VER", 0.3);
+// CHECK PREREQUISITES K1LSP
+function check_k1lsp_prerequisites() {
+    global $k1_wp_error;
+    $admin_url = get_admin_url();
+    $k1_functions_install_url = $admin_url . "/plugin-install.php?tab=plugin-information&plugin=klan1-functions&TB_iframe=true&width=600&height=550";
+    $html_link_to_install = "<a href='{$k1_functions_install_url}' class='thickbox' title='" . _("More information about Klan1 Common WP Functions") . "'>" . _("View details and install/update here") . "</a>";
+    $WP_Error_install_msg = __("<p>The plugin 'Klan1 Common WP Functions' ver >= 0.3 is needed, please install it first.</p>");
+    $WP_Error_update_msg = __("<p>The plugin 'Klan1 Common WP Functions' is outdated, please update it first.</p>");
+
+    if (!defined("K1_FUNCTIONS")) {
+        $k1_wp_error = new WP_Error('K1LSP-NO-K1_FUNCTIONS', $WP_Error_install_msg . $html_link_to_install);
+    } else {
+        if (K1_FUNCTIONS_VER < 0.3) {
+            $k1_wp_error = new WP_Error('K1_FUNCTIONS-TO-UPDATE', $WP_Error_update_msg . $html_link_to_install);
+        } else {
+            define("K1FM_VER", 0.3);
+        }
+    }
+    if (isset($k1_wp_error)) {
+        if (is_admin()) {
+            add_action('admin_notices', 'k1lsp_admin_notice');
+        } else {
+            echo $k1_wp_error->get_error_message();
+        }
+    }
 }
+
+add_action('init', 'check_k1lsp_prerequisites', 1);
+
+function k1lsp_admin_notice() {
+    global $k1_wp_error;
+    ?>
+    <div class="error">
+        <p><strong>Klan1 WP List Subpages: </strong><?php echo $k1_wp_error->get_error_message(); ?></p>
+    </div>
+    <?php
+    unset($k1_wp_error);
+}
+
+// PLUGIN CODE 
 
 define("K1LSP_URL", plugin_dir_url(__FILE__));
 define("K1LSP_DIR", plugin_dir_path(__FILE__));
@@ -170,13 +204,13 @@ function k1_list_pages_func($attribs) {
                                             />
                                     </a>
                                 </td>
-                            <?php endif ?>
+                <?php endif ?>
                             <td class="link"><a href="<?php echo $_SERVER['REQUEST_URI'] . "" . $page->post_name; ?>"><?php echo $page->post_title; ?></a></td>
                         </tr>
                     </tbody>
                 </table>
             <?php endforeach; ?>
-        <?php else: ?>
+            <?php else: ?>
             <ul class="<?php echo $class ?>">
                 <?php
                 wp_list_pages($args_ul);
