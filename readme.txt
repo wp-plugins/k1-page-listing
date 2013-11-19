@@ -39,7 +39,7 @@ Please read: http://codex.wordpress.org/Template_Tags/get_posts
 * 'thumbzc' => 1 *Zoom crop or not*
 * 'thumba' => "c" *align image on zoom or crop*
 
-        See TIMTHUMB documentation: http://www.binarymoon.co.uk/2010/08/timthumb-part-4-moving-crop-location/
+See TIMTHUMB documentation: http://www.binarymoon.co.uk/2010/08/timthumb-part-4-moving-crop-location/
 
 **Table mode**
 
