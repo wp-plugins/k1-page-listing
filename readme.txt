@@ -11,50 +11,48 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This one will help you to list all the subpages in a list with links, this one is intented to help WP to be used as CMS.
 
 == Description ==
-**IMPORTANT**: This plugin requires **Klan1 Common WP Functions** plugin - http://wordpress.org/plugins/klan1-functions/.
+**IMPORTANT**: This plugin requires **Klan1 Common WP Functions** plugin *http://wordpress.org/plugins/klan1-functions/.
 
-USAGE: 
+**USAGE**
 
-[k1-list-pages mode=table]
- or
-[k1-list-pages mode=list]
+* `[k1-list-pages mode=table]`
+* `[k1-list-pages mode=list]`
 
-OTHER PARAMETERS:
+*OTHER PARAMETERS:*
 
 This are written as 'parameter' => default value
 
-[General]
+**General**
 
-* 'exclude' => null - Coma separated list with ID numbers
-* 'class' => null -CSS class to assign to the table or list
-* 'mode' => "table" - html tables or ul-li link listing without thumb
-* 'orderby' => "title" - order field
-* 'order' => "ASC" - DESC or ASC 
+* 'exclude' => null *Coma separated list with ID numbers*
+* 'class' => null *CSS class to assign to the table or list*
+* 'mode' => "table" *html tables or ul-li link listing without thumb*
+* 'orderby' => "title" *order field*
+* 'order' => "ASC" *DESC or ASC*
         
 Please read: http://codex.wordpress.org/Template_Tags/get_posts
 
-[Thumb]
+**Thumb**
 
-* 'thumbw' => 80 - width
-* 'thumbh' => 50 - height
-* 'thumbzc' => 1 - Zoom crop or not
-* 'thumba' => "c" - align image on zoom or crop
+* 'thumbw' => 80 *width*
+* 'thumbh' => 50 *height*
+* 'thumbzc' => 1 *Zoom crop or not*
+* 'thumba' => "c" *align image on zoom or crop*
 
         See TIMTHUMB documentation: http://www.binarymoon.co.uk/2010/08/timthumb-part-4-moving-crop-location/
 
-[mode TABLE]
+**Table mode**
 
-* 'thumbs' => 1 - show or not thumbs
+* 'thumbs' => 1 *show or not thumbs*
 
-[mode LIST]
+**List mode**
 
-*'depth' => 1,
+* 'depth' => 1,
 * 'title' => null,
         
 See http://codex.wordpress.org/Function_Reference/wp_list_pages for better explanation about this.
 
-
-Example:
+*Example:*
 
 ´[k1-list-pages mode=table orderby=date order=desc exclude=3,45]´
 
